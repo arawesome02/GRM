@@ -51,3 +51,14 @@ body {
     font-weight: 600;
 
 }
+.card-time {
+    font-family: 'Courier New', Courier, monospace; /* Digital look */
+    font-size: 0.9rem;
+    color: #007bff; /* Bright blue color */
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.card-content {
+    padding: 15px;
+}
