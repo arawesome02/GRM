@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.logo-space {
+    width: 120px;
+    height: 50px;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    background: #fff;
+}
+
+/* Smaller Card Grid */
+.gallery-container {
+    display: grid;
+    /* Reduced min-width from 250px to 200px to make cards smaller */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* FIX: This makes all images exactly the same size */
+.fixed-image {
+    width: 100%;       /* Spans full width of the small card */
+    height: 140px;     /* Fixed height for all images */
+    object-fit: cover; /* Crops image to fit without stretching */
+    display: block;
+    background-color: #eee; /* Fallback color if image is missing */
+}
+
+.card-name {
+    padding: 12px;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 600;
+}
