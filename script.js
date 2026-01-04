@@ -1,30 +1,25 @@
 console.log("Launched Successfully.");
 
-function updateClocks() {
-    const cards = document.querySelectorAll('.card');
+document.addEventListener('DOMContentLoaded', () => {
+    const openBtn = document.getElementById('open-btn');
 
-    cards.forEach(card => {
-        const timezone = card.getAttribute('data-timezone');
-        const timeDisplay = card.querySelector('.card-time');
+    openBtn.addEventListener('click', () => {
+        const selectedCards = document.querySelectorAll('.card');
+        let count = 0;
 
-        if (timezone) {
-            const now = new Date();
-            // Convert local time to the target timezone
-            const timeString = now.toLocaleTimeString('en-GB', {
-                timeZone: timezone,
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: true
-            });
+        selectedCards.forEach(card => {
+            const checkbox = card.querySelector('.card-checkbox');
+            const link = card.getAttribute('data-link');
 
-            timeDisplay.textContent = timeString;
+            if (checkbox.checked && link) {
+                window.open(link, '_blank');
+                count++;
+            }
+        });
+
+        if (count === 0) {
+            alert("Please select at least one country first.");
         }
     });
-}
+});
 
-// Update every second
-setInterval(updateClocks, 1000);
-
-// Run immediately on load
-updateClocks();
